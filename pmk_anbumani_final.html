@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Anbumani Ramadoss — Legal Defence</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Rajdhani:wght@500;600;700&family=Hind+Madurai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A84C;--gold2:#E8C97A;--deep:#0D1F3C;--mid:#071020;--blue:#1B3A6B;--cream:#F5EDD6;--red:#C0392B;--green:#1A6B3A;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--cream);font-family:Georgia,serif;overflow-x:hidden;}
+body.ta{font-family:'Hind Madurai',sans-serif;}
+
+/* LANG TOGGLE */
+.ltoggle{position:fixed;top:14px;right:14px;z-index:9999;display:flex;background:rgba(10,22,46,.97);border:1.5px solid rgba(201,168,76,.5);border-radius:40px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.6);}
+.lb{padding:9px 20px;font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;background:none;border:none;cursor:pointer;color:rgba(245,237,214,.45);transition:all .2s;}
+.lb.on{background:var(--gold);color:#0a1628;border-radius:40px;}
+
+/* HERO */
+.hero{min-height:100vh;background:radial-gradient(ellipse at 20% 50%,rgba(27,58,107,.8),transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(201,168,76,.15),transparent 50%),linear-gradient(160deg,#0D1F3C,#071020 60%,#0A1628);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px 100px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(201,168,76,.04) 80px),repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(201,168,76,.04) 80px);pointer-events:none;}
+.hero::after{content:'⚖';position:absolute;font-size:520px;color:rgba(201,168,76,.03);right:-80px;bottom:-80px;pointer-events:none;}
+.emblem{width:90px;height:90px;border:3px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;position:relative;animation:pulse 3s ease-in-out infinite;}
+.emblem::before{content:'';position:absolute;inset:-8px;border:1px solid rgba(201,168,76,.3);border-radius:50%;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,168,76,.4);}50%{box-shadow:0 0 0 16px rgba(201,168,76,0);}}
+.etxt{font-family:'Rajdhani',sans-serif;font-size:28px;font-weight:700;color:var(--gold);letter-spacing:2px;}
+.htag{font-family:'Rajdhani',sans-serif;font-size:12px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:20px;animation:fu .8s .3s both;}
+body.ta .htag{font-family:'Hind Madurai',sans-serif;letter-spacing:1px;font-size:13px;}
+.htit{font-family:'Playfair Display',serif;font-size:clamp(36px,7vw,82px);font-weight:900;line-height:1.1;color:#fff;margin-bottom:16px;animation:fu .8s .5s both;}
+body.ta .htit{font-family:'Hind Madurai',sans-serif;font-size:clamp(30px,5.5vw,68px);}
+.htit span{color:var(--gold);font-style:italic;}
+body.ta .htit span{font-style:normal;}
+.hsub{font-size:clamp(15px,2.2vw,19px);color:rgba(245,237,214,.75);max-width:640px;line-height:1.8;margin-bottom:40px;animation:fu .8s .7s both;}
+.hbdg{display:inline-flex;align-items:center;gap:10px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.4);padding:14px 24px;border-radius:4px;font-family:'Rajdhani',sans-serif;font-size:13px;letter-spacing:2px;color:var(--gold2);animation:fu .8s .9s both;}
+body.ta .hbdg{font-family:'Hind Madurai',sans-serif;letter-spacing:.5px;}
+.hbdg::before,.hbdg::after{content:'★';font-size:10px;}
+@keyframes fu{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.shi{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.5;}
+.shi span{font-family:'Rajdhani',sans-serif;font-size:11px;letter-spacing:3px;color:var(--gold);}
+.shl{width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sl 2s ease-in-out infinite;}
+@keyframes sl{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform:scaleY(1);transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+
+/* NAV */
+.nav{background:rgba(13,31,60,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,.2);position:sticky;top:0;z-index:100;padding:0 24px;}
+.ni{max-width:1100px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;}
+.ni::-webkit-scrollbar{display:none;}
+.nb{padding:15px 14px;font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(245,237,214,.5);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .2s;}
+body.ta .nb{font-family:'Hind Madurai',sans-serif;letter-spacing:.5px;font-size:13px;}
+.nb:hover,.nb.on{color:var(--gold);border-bottom-color:var(--gold);}
+
+/* SECTIONS */
+section{padding:80px 24px;}
+.w{max-width:1100px;margin:0 auto;}
+.sh{text-align:center;margin-bottom:56px;}
+.ey{font-family:'Rajdhani',sans-serif;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block;}
+body.ta .ey{font-family:'Hind Madurai',sans-serif;letter-spacing:1px;font-size:13px;}
+.st{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,44px);font-weight:700;color:#fff;line-height:1.2;}
+body.ta .st{font-family:'Hind Madurai',sans-serif;font-weight:700;}
+.st em{color:var(--gold);font-style:italic;}
+body.ta .st em{font-style:normal;}
+.sd{width:60px;height:3px;background:linear-gradient(to right,var(--gold),transparent);margin:20px auto 0;}
+.fi{opacity:0;transform:translateY(24px);transition:all .6s;}
+.fi.v{opacity:1;transform:translateY(0);}
+
+/* STATUS */
+#accusation{background:linear-gradient(180deg,var(--deep),#0a1830);}
+.sban{background:linear-gradient(90deg,rgba(243,156,18,.15),rgba(243,156,18,.05));border:1px solid rgba(243,156,18,.3);border-radius:6px;padding:16px 24px;display:flex;align-items:center;gap:14px;margin-bottom:40px;}
+.sd2{width:10px;height:10px;border-radius:50%;background:#f39c12;flex-shrink:0;animation:bl 1.5s ease-in-out infinite;}
+@keyframes bl{0%,100%{opacity:1;}50%{opacity:.2;}}
+.st2{font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;color:#f39c12;}
+body.ta .st2{font-family:'Hind Madurai',sans-serif;letter-spacing:.5px;font-size:13px;}
+
+/* ACCUSATION GRID */
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.15);border-radius:8px;overflow:hidden;}
+@media(max-width:700px){.ag{grid-template-columns:1fr;}}
+.ac{background:rgba(13,31,60,.9);padding:32px 28px;transition:background .3s;}
+.ac:hover{background:rgba(27,58,107,.6);}
+.ac.hl{background:rgba(192,57,43,.08);border-left:3px solid var(--red);}
+.al{font-family:'Rajdhani',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:block;}
+body.ta .al{font-family:'Hind Madurai',sans-serif;letter-spacing:.5px;font-size:12px;}
+.ac.hl .al{color:#e74c3c;}
+.ati{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.3;}
+body.ta .ati{font-family:'Hind Madurai',sans-serif;}
+.ab{font-size:15px;color:rgba(245,237,214,.75);line-height:1.8;}
+
+/* PULL QUOTE */
+.pq{border-left:4px solid var(--gold);padding:20px 28px;background:rgba(201,168,76,.05);border-radius:0 6px 6px 0;margin:32px 0;font-family:'Playfair Display',serif;font-size:17px;font-style:italic;color:rgba(245,237,214,.85);line-height:1.65;}
+body.ta .pq{font-family:'Hind Madurai',sans-serif;font-style:normal;}
+.pq cite{display:block;margin-top:10px;font-family:'Rajdhani',sans-serif;font-size:11px;font-style:normal;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+body.ta .pq cite{font-family:'Hind Madurai',sans-serif;letter-spacing:.5px;}
+
+/* TIMELINE */
+#timeline{background:#071020;}
+.tw{position:relative;padding-left:40px;}
+.tw::before{content:'';position:absolute;left:16px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--gold),rgba(201,168,76,.1));}
+.tli{position:relative;opacity:0;transform:translateX(-20px);transition:all .5s;}
+.tli.v{opacity:1;transform:translateX(0);}
+.dot{position:absolute;left:-32px;top:28px;width:14px;height:14px;border-radius:50%;border:2px solid var(--gold);background:var(--deep);z-index:1;}
+.dot.w{background:var(--green);border-color:#2ecc71;}
+.dot.l{background:var(--red);border-color:#e74c3c;}
+.dot.m{background:var(--blue);border-color:var(--gold);}
+.tc{background:rgba(27,58,107,.2);border:1px solid rgba(201,168,76,.1);border-left:3px solid transparent;border-radius:6px;padding:22px 26px;margin-bottom:16px;transition:all .3s;}
+.tc:hover{background:rgba(27,58,107,.4);border-left-color:var(--gold);transform:translateX(4px);}
+.tc.w{border-left-color:rgba(46,204,113,.4);}
+.tc.l{border-left-color:rgba(231,76,60,.3);}
+.td{font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.te{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:8px;}
+body.ta .te{font-family:'Hind Madurai',sans-serif;}
+.tx{font-size:15px;color:rgba(245,237,214,.7);line-height:1.75;}
+.bdg{display:inline-block;margin-top:10px;padding:4px 12px;border-radius:2px;font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;}
+.bc{background:rgba(192,57,43,.2);color:#e74c3c;border:1px solid rgba(192,57,43,.3);}
+.bw{background:rgba(26,107,58,.2);color:#2ecc71;border:1px solid rgba(46,204,113,.3);}
+.bs{background:rgba(142,68,173,.2);color:#bb8fce;border:1px solid rgba(142,68,173,.3);}
+.bp{background:rgba(243,156,18,.15);color:#f39c12;border:1px solid rgba(243,156,18,.3);}
+.bn{background:rgba(201,168,76,.15);color:var(--gold);border:1px solid rgba(201,168,76,.3);}
+
+/* VIDEO */
+#video{background:linear-gradient(180deg,#071020,#0a1828);}
+.vb{background:rgba(13,31,60,.8);border:1px solid rgba(201,168,76,.2);border-radius:10px;padding:44px;position:relative;overflow:hidden;}
+.vb::before{content:'?';position:absolute;right:-20px;top:-40px;font-size:280px;color:rgba(201,168,76,.04);font-family:'Playfair Display',serif;font-weight:900;line-height:1;pointer-events:none;}
+.v2{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:32px;}
+@media(max-width:700px){.v2{grid-template-columns:1fr;}}
+.vs{padding:26px;border-radius:6px;}
+.vs.a{background:rgba(26,107,58,.1);border:1px solid rgba(46,204,113,.2);}
+.vs.c{background:rgba(192,57,43,.08);border:1px solid rgba(192,57,43,.2);}
+.vst{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;}
+body.ta .vst{font-family:'Hind Madurai',sans-serif;letter-spacing:.5px;}
+.vs.a .vst{color:#2ecc71;}.vs.c .vst{color:#e74c3c;}
+.vp{display:flex;gap:12px;margin-bottom:14px;font-size:15px;color:rgba(245,237,214,.8);line-height:1.65;}
+.vp::before{content:'→';flex-shrink:0;color:var(--gold);margin-top:2px;}
+
+/* PILLARS */
+#defence{background:#0a1828;}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+.pc{background:linear-gradient(135deg,rgba(27,58,107,.3),rgba(13,31,60,.8));border:1px solid rgba(201,168,76,.15);border-top:3px solid var(--gold);border-radius:6px;padding:30px 26px;transition:all .3s;}
+.pc:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.4);}
+.pn{font-family:'Playfair Display',serif;font-size:52px;font-weight:900;color:rgba(201,168,76,.12);line-height:1;margin-bottom:8px;}
+.pt{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.3;}
+body.ta .pt{font-family:'Hind Madurai',sans-serif;}
+.pb{font-size:15px;color:rgba(245,237,214,.7);line-height:1.78;}
+
+/* COURTS */
+#courts{background:linear-gradient(180deg,#0a1828,var(--deep));}
+.cr{display:grid;grid-template-columns:150px 1fr auto;gap:20px;align-items:start;padding:24px 0;border-bottom:1px solid rgba(201,168,76,.08);}
+@media(max-width:640px){.cr{grid-template-columns:1fr;}}
+.cn{font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);padding-top:4px;}
+body.ta .cn{font-family:'Hind Madurai',sans-serif;letter-spacing:.5px;font-size:13px;}
+.cd{font-size:15px;color:rgba(245,237,214,.8);line-height:1.7;}
+.cd strong{color:#fff;}
+.co{font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:2px;white-space:nowrap;align-self:flex-start;}
+body.ta .co{font-family:'Hind Madurai',sans-serif;letter-spacing:.5px;}
+.or{background:rgba(46,204,113,.15);color:#2ecc71;border:1px solid rgba(46,204,113,.3);}
+.ox{background:rgba(231,76,60,.12);color:#e74c3c;border:1px solid rgba(231,76,60,.25);}
+.op{background:rgba(243,156,18,.12);color:#f39c12;border:1px solid rgba(243,156,18,.25);}
+.on{background:rgba(201,168,76,.1);color:var(--gold);border:1px solid rgba(201,168,76,.25);}
+
+/* FACTS */
+#facts{background:#071020;}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-bottom:48px;}
+.fc{background:rgba(27,58,107,.25);border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:24px;}
+.fi2{font-size:28px;margin-bottom:8px;}
+.ft{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block;}
+body.ta .ft{font-family:'Hind Madurai',sans-serif;letter-spacing:.5px;font-size:14px;}
+.fx{font-size:15px;color:rgba(245,237,214,.8);line-height:1.65;}
+
+/* CONCLUSION */
+#conclusion{background:linear-gradient(160deg,#0D1F3C,#071020);text-align:center;}
+.cq{max-width:780px;margin:0 auto 48px;font-family:'Playfair Display',serif;font-size:clamp(17px,2.8vw,26px);font-style:italic;color:rgba(245,237,214,.9);line-height:1.7;position:relative;padding:40px;}
+body.ta .cq{font-family:'Hind Madurai',sans-serif;font-style:normal;}
+.cq::before{content:'"';position:absolute;top:0;left:0;font-size:100px;color:rgba(201,168,76,.2);font-family:'Playfair Display',serif;line-height:1;}
+.vs2{display:inline-flex;flex-direction:column;align-items:center;gap:16px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.25);border-radius:8px;padding:40px 60px;max-width:620px;width:100%;}
+@media(max-width:500px){.vs2{padding:32px 24px;}}
+.vm{font-family:'Playfair Display',serif;font-size:clamp(26px,5vw,50px);font-weight:900;color:var(--gold);line-height:1;}
+body.ta .vm{font-family:'Hind Madurai',sans-serif;}
+.vsb{font-family:'Rajdhani',sans-serif;font-size:12px;letter-spacing:3px;color:rgba(245,237,214,.6);text-transform:uppercase;}
+body.ta .vsb{font-family:'Hind Madurai',sans-serif;letter-spacing:.5px;font-size:13px;}
+.vln{width:80px;height:1px;background:rgba(201,168,76,.4);}
+.vbx{font-size:16px;color:rgba(245,237,214,.75);line-height:1.7;text-align:center;}
+
+/* FOOTER */
+footer{background:#040e1c;border-top:1px solid rgba(201,168,76,.1);padding:24px;text-align:center;font-family:'Rajdhani',sans-serif;font-size:12px;letter-spacing:2px;color:rgba(245,237,214,.3);text-transform:uppercase;}
+body.ta footer{font-family:'Hind Madurai',sans-serif;letter-spacing:.5px;}
+</style>
+</head>
+<body class="en">
+
+<div class="ltoggle">
+  <button class="lb" id="bta" onclick="L('ta')">தமிழ்</button>
+  <button class="lb on" id="ben" onclick="L('en')">EN</button>
+</div>
+
+<section class="hero" id="home">
+  <div class="emblem"><span class="etxt">PMK</span></div>
+  <p class="htag" id="htag">Pattali Makkal Katchi — Legal Defence Record</p>
+  <h1 class="htit" id="htit">The Truth<br><span>Stands Firm</span></h1>
+  <p class="hsub" id="hsub">A comprehensive legal record of the politically motivated CBI case against Dr. Anbumani Ramadoss — 13 years of proceedings, zero convictions, and a case built on institutional pressure, not evidence.</p>
+  <div class="hbdg" id="hbdg">No Charge Proved &nbsp;|&nbsp; No Conviction &nbsp;|&nbsp; Still Fighting</div>
+  <div class="shi"><span id="scr">Scroll</span><div class="shl"></div></div>
+</section>
+
+<nav class="nav">
+  <div class="ni">
+    <button class="nb on" onclick="go('#accusation')" id="n1">Accusation</button>
+    <button class="nb" onclick="go('#timeline')" id="n2">Timeline</button>
+    <button class="nb" onclick="go('#video')" id="n3">The Video</button>
+    <button class="nb" onclick="go('#defence')" id="n4">Defence</button>
+    <button class="nb" onclick="go('#courts')" id="n5">Court Tracker</button>
+    <button class="nb" onclick="go('#facts')" id="n6">Key Facts</button>
+    <button class="nb" onclick="go('#conclusion')" id="n7">Verdict</button>
+  </div>
+</nav>
+
+<!-- S1: ACCUSATION -->
+<section id="accusation">
+<div class="w">
+  <div class="sh fi">
+    <span class="ey" id="ey1">Understanding the Case</span>
+    <h2 class="st" id="st1">What CBI <em>Claimed</em></h2>
+    <div class="sd"></div>
+  </div>
+  <div class="sban fi">
+    <div class="sd2"></div>
+    <span class="st2" id="sban1">Case Active — Delhi High Court — CRL.M.C. 4442/2015 &amp; 4443/2015 — Last heard: Jan 6, 2026</span>
+  </div>
+  <div class="ag fi">
+    <div class="ac hl">
+      <span class="al" id="al1">The Core Allegation</span>
+      <p class="ati" id="at1">Illegal Permission to Index Medical College, Indore</p>
+      <p class="ab" id="ab1">CBI alleged that as Union Health Minister (2004–2009), Dr. Anbumani approved MBBS admissions for Index Medical College Hospital &amp; Research Centre (IMCHRC), Indore for 2008–09 — despite the Medical Council of India (MCI) recommending against it due to inadequate faculty and clinical resources.</p>
+    </div>
+    <div class="ac">
+      <span class="al" id="al2">The Second Case</span>
+      <p class="ati" id="at2">Rohilkhand Medical College, Bareilly, UP</p>
+      <p class="ab" id="ab2">A parallel CBI case alleged similar favours to Rohilkhand Medical College and Hospital (RMCH) in Bareilly — involving renewal of MBBS admission approvals for 2008–09 despite MCI objections.</p>
+    </div>
+    <div class="ac">
+      <span class="al" id="al3">Sections Charged</span>
+      <p class="ati" id="at3">Criminal Conspiracy &amp; Corruption</p>
+      <p class="ab" id="ab3">IPC Sections 120-B (Criminal Conspiracy), 420 (Cheating), 465 &amp; 468 (Forgery), 471 (Using forged documents). Prevention of Corruption Act Sections 13(1)(d) and 13(2) — abusing official position for pecuniary advantage.</p>
+    </div>
+    <div class="ac">
+      <span class="al" id="al4">Critical Point</span>
+      <p class="ati" id="at4">Financial Gain to College — Not to Anbumani</p>
+      <p class="ab" id="ab4">The CBI's own chargesheet identifies the "pecuniary advantage" as going to the college — not to Dr. Anbumani personally. No direct bribe or financial gain to Anbumani has ever been alleged or evidenced.</p>
+    </div>
+  </div>
+  <div class="pq fi" id="pq1">"The petitioner is falsely implicated in the present case; he was competent to grant permission on the basis of the note put and signed by the recommending authority and there is no evidence to connect the petitioner in commission of conspiracy."<cite>— Sr. Advocate Mohit Gupta, Counsel for Dr. Anbumani Ramadoss, Delhi HC 2019</cite></div>
+</div>
+</section>
+
+<!-- S2: TIMELINE -->
+<section id="timeline">
+<div class="w">
+  <div class="sh fi">
+    <span class="ey" id="ey2">13 Years of Proceedings</span>
+    <h2 class="st" id="st2">A <em>Chronological</em> Record</h2>
+    <div class="sd"></div>
+  </div>
+  <div class="tw">
+    <div class="tli"><div class="dot m"></div><div class="tc">
+      <p class="td">2004 – 2009</p>
+      <p class="te" id="te1">Dr. Anbumani Serves as Union Health Minister</p>
+      <p class="tx" id="tx1">Youngest Cabinet Minister at 35 in UPA-I under PM Manmohan Singh. Founded the National Rural Health Mission (NRHM), Public Health Foundation of India, and FSSAI. Globally praised by the UN Secretary-General as a "public health champion."</p>
+      <span class="bdg bn">UPA-I</span>
+    </div></div>
+    <div class="tli"><div class="dot l"></div><div class="tc l">
+      <p class="td">2008 – 2009</p>
+      <p class="te" id="te2">The Alleged Irregularity Period</p>
+      <p class="tx" id="tx2">CBI alleges Anbumani approved MBBS admissions despite MCI deficiency reports. Crucially, the final permission came after a second central inspection on October 20, 2008 that found <strong>adequate facilities</strong>. That inspection was videographed.</p>
+      <span class="bdg bc" id="b2">CBI Allegation Period</span>
+    </div></div>
+    <div class="tli"><div class="dot m"></div><div class="tc">
+      <p class="td">21 Feb 2011</p>
+      <p class="te" id="te3">CBI Conducts Raids</p>
+      <p class="tx" id="tx3">CBI raids Anbumani's former Officer on Special Duty. The timing — two years after UPA-II began, after PMK distanced from Congress — is politically significant.</p>
+      <span class="bdg bc" id="b3">CBI Action</span>
+    </div></div>
+    <div class="tli"><div class="dot l"></div><div class="tc l">
+      <p class="td">27 Apr 2012</p>
+      <p class="te" id="te4">36-Page CBI Chargesheet Filed</p>
+      <p class="tx" id="tx4">CBI files chargesheet against Dr. Anbumani and 9 others. Critically, the October 20, 2008 inspection videography is NOT included — the omission that becomes the central legal controversy.</p>
+      <span class="bdg bc" id="b4">Chargesheet Filed</span>
+    </div></div>
+    <div class="tli"><div class="dot m"></div><div class="tc">
+      <p class="td">4 Aug 2012</p>
+      <p class="te" id="te5">Bail Granted</p>
+      <p class="tx" id="tx5">Dr. Anbumani and 8 others granted bail. He declares the case politically motivated and vows to fight legally.</p>
+      <span class="bdg bw" id="b5">Bail Granted</span>
+    </div></div>
+    <div class="tli"><div class="dot l"></div><div class="tc l">
+      <p class="td">7 Oct 2015</p>
+      <p class="te" id="te6">Trial Court Orders Charge-Framing</p>
+      <p class="tx" id="tx6">Special CBI Judge orders charges in both cases. Several co-accused discharged. Court does NOT address the videography evidence at all.</p>
+      <span class="bdg bc" id="b6">Charges Ordered</span>
+    </div></div>
+    <div class="tli"><div class="dot w"></div><div class="tc w">
+      <p class="td">29 Jul 2019</p>
+      <p class="te" id="te7">🏆 Delhi High Court Sets Aside Charge Order</p>
+      <p class="tx" id="tx7">Justice I.S. Mehta sets aside the 2015 charge order entirely. Rules that the Oct 20, 2008 videography is <strong>"material evidence"</strong> and must be supplied to accused before any charges can be framed. A landmark victory for Anbumani.</p>
+      <span class="bdg bw" id="b7">Major Relief ✓</span>
+    </div></div>
+    <div class="tli"><div class="dot l"></div><div class="tc l">
+      <p class="td">27 Jul 2022</p>
+      <p class="te" id="te8">Supreme Court Reverses Delhi HC — Remits Back</p>
+      <p class="tx" id="tx8">Supreme Court sets aside HC's 2019 order on CBI's SLP, remitting back to Delhi HC for fresh consideration. SC did NOT frame charges — only asked HC to reconsider properly.</p>
+      <span class="bdg bs" id="b8">SC Remits to HC</span>
+    </div></div>
+    <div class="tli"><div class="dot m"></div><div class="tc">
+      <p class="td">2022 – Present</p>
+      <p class="te" id="te9">Delhi HC Hearing Afresh — No Charges Framed</p>
+      <p class="tx" id="tx9">Fresh hearing under CRL.M.C. 4442/2015 &amp; 4443/2015. As of January 6, 2026, the case continues. After 13+ years, <strong>no formal charges have been conclusively framed</strong> against Dr. Anbumani.</p>
+      <span class="bdg bp" id="b9">Currently Pending</span>
+    </div></div>
+  </div>
+</div>
+</section>
+
+<!-- S3: VIDEO -->
+<section id="video">
+<div class="w">
+  <div class="sh fi">
+    <span class="ey" id="ey3">The Central Mystery</span>
+    <h2 class="st" id="st3">The <em>Hidden</em> Video</h2>
+    <div class="sd"></div>
+  </div>
+  <div class="vb fi">
+    <p style="font-family:'Rajdhani',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;" id="vtag">MCI Inspection Videography — October 20, 2008</p>
+    <p style="font-size:16px;color:rgba(245,237,214,.8);line-height:1.78;max-width:780px;" id="vbody">A central inspection team visited Index Medical College on <strong style="color:#fff;">October 20, 2008</strong> and videographed their inspection. This team found <strong style="color:#fff;">adequate facilities</strong> and gave a clean report. CBI seized the video — but <strong style="color:var(--gold);">deliberately excluded</strong> it from the chargesheet.</p>
+    <div class="v2">
+      <div class="vs a">
+        <p class="vst" id="vst1">✦ Anbumani's Position</p>
+        <div class="vp" id="vp1">The video shows the college <strong>had no deficiencies</strong> — vindicating the permission granted.</div>
+        <div class="vp" id="vp2">The ASG stated before the Supreme Court that the inspection was videographed and <strong>"no deficiency was found"</strong>.</div>
+        <div class="vp" id="vp3">Suppressing the video violates fair trial rights. The Delhi HC called it <strong>"material evidence"</strong> in 2019.</div>
+      </div>
+      <div class="vs c">
+        <p class="vst" id="vst2">✦ CBI's Silence</p>
+        <div class="vp" id="vp4">CBI did <strong>not dispute</strong> the video exists — confirmed in court.</div>
+        <div class="vp" id="vp5">CBI chose not to include it in the chargesheet — but never explained <strong>why</strong>.</div>
+        <div class="vp" id="vp6">If the video shows the college was compliant, it would <strong>directly contradict</strong> CBI's case.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- S4: DEFENCE -->
+<section id="defence">
+<div class="w">
+  <div class="sh fi">
+    <span class="ey" id="ey4">Legal Defence Arguments</span>
+    <h2 class="st" id="st4">5 Pillars of <em>Innocence</em></h2>
+    <div class="sd"></div>
+  </div>
+  <div class="pg">
+    <div class="pc fi"><div class="pn">01</div>
+      <p class="pt" id="pt1">Ministerial Process Followed</p>
+      <p class="pb" id="pb1">Dr. Anbumani granted permission based on a unanimous file note signed by the recommending authority — standard ministerial procedure. A minister acting on officers' advice cannot be criminally liable simply because the decision was wrong.</p>
+    </div>
+    <div class="pc fi"><div class="pn">02</div>
+      <p class="pt" id="pt2">Final Inspection Cleared the College</p>
+      <p class="pb" id="pb2">The final permission came after the October 20, 2008 central team — the most recent inspection — found adequate facilities. The ASG confirmed this before the Supreme Court. Anbumani acted on the latest authoritative report.</p>
+    </div>
+    <div class="pc fi"><div class="pn">03</div>
+      <p class="pt" id="pt3">No Personal Financial Gain</p>
+      <p class="pb" id="pb3">Not a single rupee of personal bribe or gain has ever been alleged against Dr. Anbumani in either chargesheet. The "pecuniary advantage" flows to the college — not the minister. No money trail, no bank transaction, nothing.</p>
+    </div>
+    <div class="pc fi"><div class="pn">04</div>
+      <p class="pt" id="pt4">Meeting Alone ≠ Conspiracy</p>
+      <p class="pb" id="pb4">CBI points to the college chairman being in the Ministry on the day permission was signed. But courts have held — citing Supreme Court precedent — that criminal conspiracy cannot be inferred merely from two parties meeting.</p>
+    </div>
+    <div class="pc fi"><div class="pn">05</div>
+      <p class="pt" id="pt5">CBI Withheld Material Evidence</p>
+      <p class="pb" id="pb5">CBI seized the inspection videography but excluded it from the chargesheet — a fundamental breach. The Delhi HC in 2019 explicitly ruled it is "material evidence" that must be given to accused. This ruling signals the court's own scepticism.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- S5: COURTS -->
+<section id="courts">
+<div class="w">
+  <div class="sh fi">
+    <span class="ey" id="ey5">Every Court, Every Outcome</span>
+    <h2 class="st" id="st5">The <em>Court</em> Record</h2>
+    <div class="sd"></div>
+  </div>
+  <div class="fi">
+    <div class="cr"><div class="cn" id="cn1">CBI Special Court<br>Delhi</div><div class="cd" id="cd1"><strong>Oct 7, 2015</strong> — Ordered charge-framing. Several co-accused discharged. Court did not address the videography evidence at all.</div><div class="co ox" id="co1">Against Anbumani</div></div>
+    <div class="cr"><div class="cn" id="cn2">Supreme Court<br>(Preliminary)</div><div class="cd" id="cd2"><strong>Nov 7, 2015</strong> — Declined to quash, directing Anbumani to challenge before HC. Procedural order only — not a finding on guilt.</div><div class="co on" id="co2">Procedural Only</div></div>
+    <div class="cr"><div class="cn" id="cn3">Delhi HC<br>Justice I.S. Mehta</div><div class="cd" id="cd3"><strong>Jul 29, 2019</strong> — Landmark relief. Set aside 2015 charge order. Held Oct 20, 2008 videography is "material evidence" and must be supplied to accused before charge-framing.</div><div class="co or" id="co3">Major Relief ✓</div></div>
+    <div class="cr"><div class="cn" id="cn4">Supreme Court<br>(SLP)</div><div class="cd" id="cd4"><strong>Jul 27, 2022</strong> — Set aside HC's 2019 order on CBI's SLP. Remitted back to Delhi HC for fresh consideration. SC did not frame charges.</div><div class="co ox" id="co4">HC Order Set Aside</div></div>
+    <div class="cr"><div class="cn" id="cn5">Delhi HC<br>Justice S.K. Sharma</div><div class="cd" id="cd5"><strong>2022 – Jan 2026 (ongoing)</strong> — Fresh hearing under CRL.M.C. 4442/2015 &amp; 4443/2015. After 13+ years, <strong>no charges conclusively framed</strong> against Dr. Anbumani.</div><div class="co op" id="co5">⬤ Ongoing</div></div>
+  </div>
+  <div class="pq fi" id="pq2">"After 13 years, across three courts, multiple rounds of appeals — not a single charge finally framed, not a single day of trial commenced. The prolonged process itself is the punishment."<cite>— PMK Legal Defence Summary</cite></div>
+</div>
+</section>
+
+<!-- S6: FACTS -->
+<section id="facts">
+<div class="w">
+  <div class="sh fi">
+    <span class="ey" id="ey6">What the Record Shows</span>
+    <h2 class="st" id="st6">Key <em>Undisputed</em> Facts</h2>
+    <div class="sd"></div>
+  </div>
+  <div class="fg fi">
+    <div class="fc"><div class="fi2">📅</div><span class="ft" id="ft1">13+ Years</span><p class="fx" id="fx1">Over 13 years since the 2012 chargesheet — without a single day of actual trial against Dr. Anbumani.</p></div>
+    <div class="fc"><div class="fi2">💰</div><span class="ft" id="ft2">Zero Personal Gain</span><p class="fx" id="fx2">Not one rupee of personal financial benefit has ever been alleged against Dr. Anbumani in either chargesheet.</p></div>
+    <div class="fc"><div class="fi2">🎥</div><span class="ft" id="ft3">The Hidden Video</span><p class="fx" id="fx3">CBI seized videography showing the college was compliant in October 2008 — but excluded it from the chargesheet entirely.</p></div>
+    <div class="fc"><div class="fi2">✅</div><span class="ft" id="ft4">Final Inspection — College Cleared</span><p class="fx" id="fx4">The Oct 20, 2008 central team found adequate facilities. The ASG confirmed this before the Supreme Court itself.</p></div>
+    <div class="fc"><div class="fi2">📋</div><span class="ft" id="ft5">Standard Ministerial Process</span><p class="fx" id="fx5">Permission granted on a unanimous file note by the recommending authority — the normal, legal ministerial process in India.</p></div>
+    <div class="fc"><div class="fi2">⚖️</div><span class="ft" id="ft6">Co-Accused Discharged</span><p class="fx" id="fx6">Multiple co-accused — Safdarjung Hospital doctors and Ministry officials — discharged by the trial court in 2015 itself.</p></div>
+    <div class="fc"><div class="fi2">🏛️</div><span class="ft" id="ft7">HC: Video is "Material Evidence"</span><p class="fx" id="fx7">The Delhi HC in 2019 explicitly ruled the suppressed video is "material evidence" — CBI withheld crucial material from the accused.</p></div>
+    <div class="fc"><div class="fi2">🔄</div><span class="ft" id="ft8">Political Timing</span><p class="fx" id="fx8">CBI raids began in 2011 — two years into UPA-II, after PMK distanced from Congress. UPA controlled CBI at that time.</p></div>
+  </div>
+</div>
+</section>
+
+<!-- S7: CONCLUSION -->
+<section id="conclusion">
+<div class="w">
+  <div class="sh fi">
+    <span class="ey" id="ey7">The Undeniable Reality</span>
+    <h2 class="st" id="st7">The <em>Truth</em> of This Case</h2>
+    <div class="sd"></div>
+  </div>
+  <div class="cq fi" id="cq1">Dr. Anbumani Ramadoss served his nation as the youngest Cabinet Minister, built landmark public health institutions, fought for the rural poor — and was rewarded with a politically timed CBI case that has dragged on for over 13 years without a single conviction, without a single charge proved, and without a single rupee of personal gain ever alleged.</div>
+  <div style="display:flex;justify-content:center;margin-bottom:60px;">
+    <div class="vs2 fi">
+      <p class="vsb" id="vs1">After 13 Years of Proceedings</p>
+      <div class="vln"></div>
+      <p class="vm" id="vm1">NOT GUILTY</p>
+      <div class="vln"></div>
+      <p class="vsb" id="vs2">No Conviction · No Proved Charge · No Personal Gain</p>
+      <p class="vbx" id="vb1">Across the CBI Special Court, Delhi High Court, and Supreme Court — through chargesheets, hearings, SLPs and remittals — Dr. Anbumani Ramadoss has not been convicted of anything. The case meant to destroy his political career has instead exposed the weaponisation of central agencies against political opponents.</p>
+    </div>
+  </div>
+  <div class="ag fi" style="max-width:900px;margin:0 auto;">
+    <div class="ac" style="border-top:3px solid var(--green);">
+      <span class="al" id="al5" style="color:#2ecc71;">What Was Proved</span>
+      <p class="ati" id="at5">Nothing Against Anbumani</p>
+      <p class="ab" id="ab5">No bribe. No money trail. No conspiracy proven. No trial concluded. No conviction recorded. The case remains at the charge-framing stage after 13 years.</p>
+    </div>
+    <div class="ac" style="border-top:3px solid var(--gold);">
+      <span class="al" id="al6">What This Case Revealed</span>
+      <p class="ati" id="at6">Political Weaponisation of CBI</p>
+      <p class="ab" id="ab6">A case timed when PMK moved away from UPA. A chargesheet excluding favourable video evidence. A prosecution dragging 13 years without a trial. The pattern is unmistakable.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer id="foot">PMK — Pattali Makkal Katchi &nbsp;|&nbsp; Legal Defence Record &nbsp;|&nbsp; Dr. Anbumani Ramadoss &nbsp;|&nbsp; All Facts Sourced from Court Records</footer>
+
+<script>
+// ── ALL TRANSLATABLE TEXT ──
+var T = {
+  en: {
+    htag:'Pattali Makkal Katchi — Legal Defence Record',
+    htit:'The Truth<br><span>Stands Firm</span>',
+    hsub:'A comprehensive legal record of the politically motivated CBI case against Dr. Anbumani Ramadoss — 13 years of proceedings, zero convictions, and a case built on institutional pressure, not evidence.',
+    hbdg:'No Charge Proved &nbsp;|&nbsp; No Conviction &nbsp;|&nbsp; Still Fighting',
+    scr:'Scroll',
+    n1:'Accusation',n2:'Timeline',n3:'The Video',n4:'Defence',n5:'Court Tracker',n6:'Key Facts',n7:'Verdict',
+    ey1:'Understanding the Case',st1:'What CBI <em>Claimed</em>',
+    sban1:'Case Active — Delhi High Court — CRL.M.C. 4442/2015 &amp; 4443/2015 — Last heard: Jan 6, 2026',
+    al1:'The Core Allegation',at1:'Illegal Permission to Index Medical College, Indore',
+    ab1:'CBI alleged that as Union Health Minister (2004–2009), Dr. Anbumani approved MBBS admissions for Index Medical College Hospital &amp; Research Centre (IMCHRC), Indore for 2008–09 — despite the Medical Council of India (MCI) recommending against it due to inadequate faculty and clinical resources.',
+    al2:'The Second Case',at2:'Rohilkhand Medical College, Bareilly, UP',
+    ab2:'A parallel CBI case alleged similar favours to Rohilkhand Medical College and Hospital (RMCH) in Bareilly — involving renewal of MBBS admission approvals for 2008–09 despite MCI objections.',
+    al3:'Sections Charged',at3:'Criminal Conspiracy &amp; Corruption',
+    ab3:'IPC Sections 120-B (Criminal Conspiracy), 420 (Cheating), 465 &amp; 468 (Forgery), 471 (Using forged documents). Prevention of Corruption Act Sections 13(1)(d) and 13(2) — abusing official position for pecuniary advantage.',
+    al4:'Critical Point',at4:'Financial Gain to College — Not to Anbumani',
+    ab4:"The CBI's own chargesheet identifies the \"pecuniary advantage\" as going to the college — not to Dr. Anbumani personally. No direct bribe or financial gain to Anbumani has ever been alleged or evidenced.",
+    pq1:'"The petitioner is falsely implicated in the present case; he was competent to grant permission on the basis of the note put and signed by the recommending authority and there is no evidence to connect the petitioner in commission of conspiracy."<cite>— Sr. Advocate Mohit Gupta, Counsel for Dr. Anbumani Ramadoss, Delhi HC 2019</cite>',
+    ey2:'13 Years of Proceedings',st2:'A <em>Chronological</em> Record',
+    te1:'Dr. Anbumani Serves as Union Health Minister',
+    tx1:'Youngest Cabinet Minister at 35 in UPA-I under PM Manmohan Singh. Founded the National Rural Health Mission (NRHM), Public Health Foundation of India, and FSSAI. Globally praised by the UN Secretary-General as a "public health champion."',
+    te2:'The Alleged Irregularity Period',
+    tx2:'CBI alleges Anbumani approved MBBS admissions despite MCI deficiency reports. Crucially, the final permission came after a second central inspection on October 20, 2008 that found <strong>adequate facilities</strong>. That inspection was videographed.',
+    b2:'CBI Allegation Period',te3:'CBI Conducts Raids',
+    tx3:'CBI raids Anbumani\'s former Officer on Special Duty. The timing — two years after UPA-II began, after PMK distanced from Congress — is politically significant.',
+    b3:'CBI Action',te4:'36-Page CBI Chargesheet Filed',
+    tx4:'CBI files chargesheet against Dr. Anbumani and 9 others. Critically, the October 20, 2008 inspection videography is NOT included — the omission that becomes the central legal controversy.',
+    b4:'Chargesheet Filed',te5:'Bail Granted',
+    tx5:'Dr. Anbumani and 8 others granted bail. He declares the case politically motivated and vows to fight legally.',
+    b5:'Bail Granted',te6:'Trial Court Orders Charge-Framing',
+    tx6:'Special CBI Judge orders charges in both cases. Several co-accused discharged. Court does NOT address the videography evidence at all.',
+    b6:'Charges Ordered',te7:'🏆 Delhi High Court Sets Aside Charge Order',
+    tx7:'Justice I.S. Mehta sets aside the 2015 charge order entirely. Rules that the Oct 20, 2008 videography is <strong>"material evidence"</strong> and must be supplied to accused before any charges can be framed. A landmark victory for Anbumani.',
+    b7:'Major Relief ✓',te8:'Supreme Court Reverses Delhi HC — Remits Back',
+    tx8:"Supreme Court sets aside HC's 2019 order on CBI's SLP, remitting back to Delhi HC for fresh consideration. SC did NOT frame charges — only asked HC to reconsider properly.",
+    b8:'SC Remits to HC',te9:'Delhi HC Hearing Afresh — No Charges Framed',
+    tx9:'Fresh hearing under CRL.M.C. 4442/2015 &amp; 4443/2015. As of January 6, 2026, the case continues. After 13+ years, <strong>no formal charges have been conclusively framed</strong> against Dr. Anbumani.',
+    b9:'Currently Pending',
+    ey3:'The Central Mystery',st3:'The <em>Hidden</em> Video',
+    vtag:'MCI Inspection Videography — October 20, 2008',
+    vbody:'A central inspection team visited Index Medical College on <strong style="color:#fff;">October 20, 2008</strong> and videographed their inspection. This team found <strong style="color:#fff;">adequate facilities</strong> and gave a clean report. CBI seized the video — but <strong style="color:var(--gold);">deliberately excluded</strong> it from the chargesheet.',
+    vst1:'✦ Anbumani\'s Position',
+    vp1:'The video shows the college <strong>had no deficiencies</strong> — vindicating the permission granted.',
+    vp2:'The ASG stated before the Supreme Court that the inspection was videographed and <strong>"no deficiency was found"</strong>.',
+    vp3:'Suppressing the video violates fair trial rights. The Delhi HC called it <strong>"material evidence"</strong> in 2019.',
+    vst2:"✦ CBI's Silence",
+    vp4:'CBI did <strong>not dispute</strong> the video exists — confirmed in court.',
+    vp5:'CBI chose not to include it in the chargesheet — but never explained <strong>why</strong>.',
+    vp6:'If the video shows the college was compliant, it would <strong>directly contradict</strong> CBI\'s case.',
+    ey4:'Legal Defence Arguments',st4:'5 Pillars of <em>Innocence</em>',
+    pt1:'Ministerial Process Followed',
+    pb1:"Dr. Anbumani granted permission based on a unanimous file note signed by the recommending authority — standard ministerial procedure. A minister acting on officers' advice cannot be criminally liable simply because the decision was wrong.",
+    pt2:'Final Inspection Cleared the College',
+    pb2:'The final permission came after the October 20, 2008 central team — the most recent inspection — found adequate facilities. The ASG confirmed this before the Supreme Court. Anbumani acted on the latest authoritative report.',
+    pt3:'No Personal Financial Gain',
+    pb3:'Not a single rupee of personal bribe or gain has ever been alleged against Dr. Anbumani in either chargesheet. No money trail, no bank transaction, nothing.',
+    pt4:'Meeting Alone ≠ Conspiracy',
+    pb4:"CBI points to the college chairman being in the Ministry on the day permission was signed. But courts have held — citing Supreme Court precedent — that criminal conspiracy cannot be inferred merely from two parties meeting.",
+    pt5:'CBI Withheld Material Evidence',
+    pb5:'CBI seized the inspection videography but excluded it from the chargesheet — a fundamental breach. The Delhi HC in 2019 explicitly ruled it is "material evidence" that must be given to accused.',
+    ey5:'Every Court, Every Outcome',st5:'The <em>Court</em> Record',
+    cn1:'CBI Special Court<br>Delhi',cd1:'<strong>Oct 7, 2015</strong> — Ordered charge-framing. Several co-accused discharged. Court did not address the videography evidence at all.',co1:'Against Anbumani',
+    cn2:'Supreme Court<br>(Preliminary)',cd2:'<strong>Nov 7, 2015</strong> — Declined to quash, directing Anbumani to challenge before HC. Procedural order only — not a finding on guilt.',co2:'Procedural Only',
+    cn3:'Delhi HC<br>Justice I.S. Mehta',cd3:'<strong>Jul 29, 2019</strong> — Landmark relief. Set aside 2015 charge order. Held Oct 20, 2008 videography is "material evidence" and must be supplied to accused before charge-framing.',co3:'Major Relief ✓',
+    cn4:'Supreme Court<br>(SLP)',cd4:"<strong>Jul 27, 2022</strong> — Set aside HC's 2019 order on CBI's SLP. Remitted back to Delhi HC for fresh consideration. SC did not frame charges.",co4:'HC Order Set Aside',
+    cn5:'Delhi HC<br>Justice S.K. Sharma',cd5:'<strong>2022 – Jan 2026 (ongoing)</strong> — Fresh hearing under CRL.M.C. 4442/2015 &amp; 4443/2015. After 13+ years, <strong>no charges conclusively framed</strong> against Dr. Anbumani.',co5:'⬤ Ongoing',
+    pq2:'"After 13 years, across three courts, multiple rounds of appeals — not a single charge finally framed, not a single day of trial commenced. The prolonged process itself is the punishment."<cite>— PMK Legal Defence Summary</cite>',
+    ey6:'What the Record Shows',st6:'Key <em>Undisputed</em> Facts',
+    ft1:'13+ Years',fx1:'Over 13 years since the 2012 chargesheet — without a single day of actual trial against Dr. Anbumani.',
+    ft2:'Zero Personal Gain',fx2:'Not one rupee of personal financial benefit has ever been alleged against Dr. Anbumani in either chargesheet.',
+    ft3:'The Hidden Video',fx3:'CBI seized videography showing the college was compliant in October 2008 — but excluded it from the chargesheet entirely.',
+    ft4:'Final Inspection — College Cleared',fx4:'The Oct 20, 2008 central team found adequate facilities. The ASG confirmed this before the Supreme Court itself.',
+    ft5:'Standard Ministerial Process',fx5:'Permission granted on a unanimous file note by the recommending authority — the normal, legal ministerial process in India.',
+    ft6:'Co-Accused Discharged',fx6:'Multiple co-accused — Safdarjung Hospital doctors and Ministry officials — discharged by the trial court in 2015 itself.',
+    ft7:'HC: Video is "Material Evidence"',fx7:'The Delhi HC in 2019 explicitly ruled the suppressed video is "material evidence" — CBI withheld crucial material from the accused.',
+    ft8:'Political Timing',fx8:'CBI raids began in 2011 — two years into UPA-II, after PMK distanced from Congress. UPA controlled CBI at that time.',
+    ey7:'The Undeniable Reality',st7:'The <em>Truth</em> of This Case',
+    cq1:'Dr. Anbumani Ramadoss served his nation as the youngest Cabinet Minister, built landmark public health institutions, fought for the rural poor — and was rewarded with a politically timed CBI case that has dragged on for over 13 years without a single conviction, without a single charge proved, and without a single rupee of personal gain ever alleged.',
+    vs1:'After 13 Years of Proceedings',vm1:'NOT GUILTY',vs2:'No Conviction · No Proved Charge · No Personal Gain',
+    vb1:'Across the CBI Special Court, Delhi High Court, and Supreme Court — through chargesheets, hearings, SLPs and remittals — Dr. Anbumani Ramadoss has not been convicted of anything. The case meant to destroy his political career has instead exposed the weaponisation of central agencies against political opponents.',
+    al5:'What Was Proved',at5:'Nothing Against Anbumani',ab5:'No bribe. No money trail. No conspiracy proven. No trial concluded. No conviction recorded. The case remains at the charge-framing stage after 13 years.',
+    al6:'What This Case Revealed',at6:'Political Weaponisation of CBI',ab6:'A case timed when PMK moved away from UPA. A chargesheet excluding favourable video evidence. A prosecution dragging 13 years without a trial. The pattern is unmistakable.',
+    foot:'PMK — Pattali Makkal Katchi &nbsp;|&nbsp; Legal Defence Record &nbsp;|&nbsp; Dr. Anbumani Ramadoss &nbsp;|&nbsp; All Facts Sourced from Court Records'
+  },
+  ta: {
+    htag:'பட்டாளி மக்கள் கட்சி — சட்ட பாதுகாப்பு ஆவணம்',
+    htit:'உண்மை<br><span>நிலைக்கும்</span>',
+    hsub:'டாக்டர் அன்புமணி ராமதாஸ் மீது அரசியல் நோக்கத்துடன் தொடரப்பட்ட சிபிஐ வழக்கின் முழுமையான சட்ட ஆவணம் — 13 ஆண்டுகால நடவடிக்கைகள், ஒரு குற்றமும் நிரூபிக்கப்படவில்லை, சாட்சியங்களின்றி நிறுவன அழுத்தத்தால் கட்டமைக்கப்பட்ட வழக்கு.',
+    hbdg:'எந்த குற்றமும் நிரூபிக்கப்படவில்லை &nbsp;|&nbsp; தண்டனை இல்லை &nbsp;|&nbsp; போராட்டம் தொடர்கிறது',
+    scr:'கீழே படிக்கவும்',
+    n1:'குற்றச்சாட்டு',n2:'காலவரிசை',n3:'மறைக்கப்பட்ட வீடியோ',n4:'பாதுகாப்பு வாதங்கள்',n5:'நீதிமன்ற பதிவு',n6:'முக்கிய உண்மைகள்',n7:'தீர்ப்பு',
+    ey1:'வழக்கை புரிந்துகொள்ளுதல்',st1:'சிபிஐ <em>கூறியது என்ன?</em>',
+    sban1:'வழக்கு நடைமுறையில் — டெல்லி உயர் நீதிமன்றம் — CRL.M.C. 4442/2015 &amp; 4443/2015 — கடைசி விசாரணை: ஜன. 6, 2026',
+    al1:'முக்கிய குற்றச்சாட்டு',at1:'இந்தூர் இண்டெக்ஸ் மருத்துவக் கல்லூரிக்கு சட்டவிரோத அனுமதி',
+    ab1:'சிபிஐ குற்றம் சாட்டியது: 2004–2009 காலகட்டத்தில் மத்திய சுகாதார அமைச்சராக இருந்த டாக்டர் அன்புமணி, இந்தூரில் உள்ள இண்டெக்ஸ் மருத்துவக் கல்லூரி மற்றும் ஆராய்ச்சி மையத்திற்கு (IMCHRC) 2008–09 ஆண்டுக்கு MBBS மாணவர் சேர்க்கை அனுமதி வழங்கினார் — போதுமான ஆசிரியர்கள் மற்றும் மருத்துவ வசதிகள் இல்லை என்று இந்திய மருத்துவக் கவுன்சில் (MCI) எதிர்பரிந்துரைத்த போதிலும்.',
+    al2:'இரண்டாவது வழக்கு',at2:'ரோஹில்கண்ட் மருத்துவக் கல்லூரி, பரேலி, உ.பி.',
+    ab2:'இணையான சிபிஐ வழக்கு: உ.பி.யில் உள்ள ரோஹில்கண்ட் மருத்துவக் கல்லூரி மற்றும் மருத்துவமனைக்கும் (RMCH) இதேபோன்ற சலுகை காட்டப்பட்டதாக குற்றம் சாட்டப்பட்டது — MCI எதிர்ப்பு இருந்தும் 2008–09 MBBS அனுமதி புதுப்பிக்கப்பட்டதாக வாதிடப்பட்டது.',
+    al3:'சுமத்தப்பட்ட பிரிவுகள்',at3:'சதி சேர்க்கை மற்றும் ஊழல்',
+    ab3:'இந்திய தண்டனைச் சட்டம்: பிரிவு 120-B (சதி சேர்க்கை), 420 (ஏமாற்றுதல்), 465 &amp; 468 (ஆவணப் போலி), 471 (போலி ஆவணங்கள் பயன்படுத்துதல்). ஊழல் தடுப்புச் சட்டம் பிரிவுகள் 13(1)(d) மற்றும் 13(2) — நிதி ஆதாயத்திற்காக அரசு அதிகாரத்தை தவறாக பயன்படுத்துதல்.',
+    al4:'மிக முக்கியமான விஷயம்',at4:'நிதி ஆதாயம் கல்லூரிக்கே — அன்புமணிக்கு அல்ல',
+    ab4:'சிபிஐயின் சொந்த குற்றப்பத்திரிகையே "நிதி ஆதாயம்" கல்லூரிக்கு சென்றதாக கூறுகிறது — டாக்டர் அன்புமணிக்கு தனிப்பட்ட முறையில் அல்ல. அன்புமணிக்கு நேரடியான லஞ்சம் அல்லது நிதி ஆதாயம் எனச் சுமத்தப்படவே இல்லை.',
+    pq1:'"மனுதாரர் இந்த வழக்கில் தவறுதலாக சேர்க்கப்பட்டுள்ளார்; பரிந்துரை செய்யும் அதிகாரியால் தயாரிக்கப்பட்டு கையொப்பமிடப்பட்ட குறிப்பின் அடிப்படையில் அனுமதி வழங்க அவர் தகுதியானவர் — சதி செய்வதில் மனுதாரரை இணைக்கும் எந்த சாட்சியமும் இல்லை."<cite>— மூத்த வழக்கறிஞர் மோகித் குப்தா, டாக்டர் அன்புமணி ராமதாஸின் வழக்கறிஞர், டெல்லி உயர் நீதிமன்றம் 2019</cite>',
+    ey2:'13 ஆண்டுகால நடவடிக்கைகள்',st2:'<em>காலவரிசை</em> பதிவு',
+    te1:'டாக்டர் அன்புமணி மத்திய சுகாதார அமைச்சராக பணியாற்றுகிறார்',
+    tx1:'பிரதமர் மன்மோகன் சிங்கின் UPA-I அரசில் 35 வயதில் இளைய அமைச்சரவை அமைச்சர். தேசிய கிராமப்புற சுகாதார இயக்கம் (NRHM), இந்திய பொது சுகாதார அடித்தளம், FSSAI ஆகியவற்றை நிறுவினார். ஐ.நா. பொதுச் செயலாளரால் "பொது சுகாதார வீரர்" என பாராட்டப்பட்டார்.',
+    te2:'குற்றம் சாட்டப்பட்ட காலகட்டம்',
+    tx2:'சிபிஐ குற்றம் சாட்டுகிறது: MCI குறைபாடு அறிக்கைகள் இருந்தும் அன்புமணி MBBS சேர்க்கை அனுமதி வழங்கினார். முக்கியமாக, அக்டோபர் 20, 2008 இரண்டாவது மத்திய ஆய்வுக் குழு <strong>போதுமான வசதிகள் உள்ளதாக</strong> கண்டறிந்த பிறகே இறுதி அனுமதி வழங்கப்பட்டது. இந்த ஆய்வு வீடியோவில் பதிவு செய்யப்பட்டது.',
+    b2:'சிபிஐ குற்றச்சாட்டு காலம்',te3:'சிபிஐ சோதனைகள் நடத்துகிறது',
+    tx3:'அன்புமணியின் முன்னாள் சிறப்பு பணி அதிகாரியின் இல்லத்தில் சிபிஐ சோதனை. UPA-II தொடங்கி PMK காங்கிரஸிடம் இருந்து விலகிய இரண்டாண்டுகளுக்குப் பிறகு நடந்தது — அரசியல் ரீதியாக முக்கியத்துவம் வாய்ந்தது.',
+    b3:'சிபிஐ நடவடிக்கை',te4:'36 பக்க சிபிஐ குற்றப்பத்திரிகை தாக்கல்',
+    tx4:'டாக்டர் அன்புமணி மற்றும் 9 பேருக்கு எதிராக சிபிஐ குற்றப்பத்திரிகை தாக்கல். முக்கியமாக, அக்டோபர் 20, 2008 வீடியோ பதிவு குற்றப்பத்திரிகையில் சேர்க்கப்படவில்லை — இதுவே பின்னர் சட்ட யுத்தத்தின் மையமாக மாறியது.',
+    b4:'குற்றப்பத்திரிகை தாக்கல்',te5:'ஜாமீன் வழங்கப்பட்டது',
+    tx5:'டாக்டர் அன்புமணி மற்றும் 8 பேருக்கு ஜாமீன் வழங்கப்பட்டது. இந்த வழக்கு அரசியல் நோக்கத்துடன் தொடரப்பட்டதாக அவர் அறிவித்து சட்டப்படி போராடுவதாக உறுதிபூண்டார்.',
+    b5:'ஜாமீன் பெற்றனர்',te6:'விசாரணை நீதிமன்றம் குற்றம் சாட்டுமாறு உத்தரவிடுகிறது',
+    tx6:'சிறப்பு சிபிஐ நீதிபதி இரண்டு வழக்குகளிலும் குற்றம் சாட்டுமாறு உத்தரவிடுகிறார். பல இணை குற்றஞ்சாட்டப்பட்டவர்கள் விடுவிக்கப்படுகிறார்கள். வீடியோ சாட்சியம் கவனிக்கப்படவே இல்லை.',
+    b6:'குற்றம் சாட்டும் உத்தரவு',te7:'🏆 டெல்லி உயர் நீதிமன்றம் குற்றம் சாட்டும் உத்தரவை ரத்து செய்கிறது',
+    tx7:'நீதிபதி I.S. மேத்தா 2015 குற்றம் சாட்டும் உத்தரவை முழுவதுமாக ரத்து செய்கிறார். அக்டோபர் 20, 2008 வீடியோ பதிவு <strong>"முக்கிய சாட்சியம்"</strong> என்று தீர்மானித்து குற்றஞ்சாட்டப்பட்டவர்களுக்கு வழங்க வேண்டும் என உத்தரவிட்டார். அன்புமணிக்கு வரலாற்றுசிறப்பு வாய்ந்த வெற்றி.',
+    b7:'பெரும் நிவாரணம் ✓',te8:'உச்ச நீதிமன்றம் டெல்லி உயர் நீதிமன்றத்தின் உத்தரவை தலைகீழாக்குகிறது',
+    tx8:'சிபிஐயின் SLP மனுவில் உச்ச நீதிமன்றம் டெல்லி உயர் நீதிமன்றத்தின் 2019 உத்தரவை ரத்து செய்து மீண்டும் டெல்லி உயர் நீதிமன்றத்திற்கு திருப்பி அனுப்புகிறது. உச்ச நீதிமன்றம் குற்றங்களை சாட்டவில்லை — சரியாக மறுபரிசீலனை செய்யுமாறு மட்டுமே கேட்டது.',
+    b8:'உயர் நீதிமன்றத்திற்கு திருப்பி அனுப்பல்',te9:'டெல்லி உயர் நீதிமன்றத்தில் புதிய விசாரணை — குற்றங்கள் ஏதும் சாட்டப்படவில்லை',
+    tx9:'CRL.M.C. 4442/2015 &amp; 4443/2015ன் கீழ் புதிய விசாரணை. ஜனவரி 6, 2026 வரையும் வழக்கு நடைமுறையில் உள்ளது. 13 ஆண்டுகளுக்கும் மேலாக, டாக்டர் அன்புமணிக்கு எதிராக <strong>இறுதியாக எந்த குற்றமும் சாட்டப்படவில்லை.</strong>',
+    b9:'தொடர்ந்து நிலுவையில்',
+    ey3:'மையமான மர்மம்',st3:'<em>மறைக்கப்பட்ட</em> வீடியோ',
+    vtag:'MCI ஆய்வு வீடியோ பதிவு — அக்டோபர் 20, 2008',
+    vbody:'மத்திய ஆய்வுக் குழு <strong style="color:#fff;">அக்டோபர் 20, 2008 அன்று</strong> இண்டெக்ஸ் மருத்துவக் கல்லூரியை வீடியோ பதிவு செய்து ஆய்வு நடத்தியது. இந்தக் குழு <strong style="color:#fff;">போதுமான வசதிகள் உள்ளதை</strong> கண்டறிந்து சாதகமான அறிக்கை சமர்பித்தது. சிபிஐ வீடியோவை கைப்பற்றியது — ஆனால் <strong style="color:var(--gold);">வேண்டுமென்றே</strong> குற்றப்பத்திரிகையில் சேர்க்கவில்லை.',
+    vst1:'✦ அன்புமணியின் நிலைப்பாடு',
+    vp1:'வீடியோ கல்லூரியில் <strong>குறைபாடுகள் இல்லை</strong> என்று காட்டுகிறது — வழங்கிய அனுமதியை நியாயப்படுத்துகிறது.',
+    vp2:'ASG உச்ச நீதிமன்றத்தில் ஆய்வு வீடியோ பதிவு செய்யப்பட்டது, <strong>"குறைபாடுகள் காணப்படவில்லை"</strong> என்று கூறினார்.',
+    vp3:'வீடியோவை மறைப்பது நியாயமான விசாரணையின் <strong>அடிப்படை உரிமையை மீறுவதாகும்.</strong> டெல்லி உயர் நீதிமன்றம் 2019ல் இதை "முக்கிய சாட்சியம்" என அங்கீகரித்தது.',
+    vst2:'✦ சிபிஐயின் மௌனம்',
+    vp4:'வீடியோ இருப்பதை சிபிஐ <strong>மறுக்கவில்லை</strong> — நீதிமன்ற நடவடிக்கைகளில் உறுதிப்படுத்தப்பட்டது.',
+    vp5:'சிபிஐ அதை குற்றப்பத்திரிகையில் சேர்க்காமல் விட்டது — <strong>ஏன்</strong> என்று பொதுவில் விளக்கவே இல்லை.',
+    vp6:'வீடியோ கல்லூரி தரத்தில் இருந்ததை காட்டினால், சிபிஐயின் வாதத்தை <strong>நேரடியாக மறுக்கும்</strong> — இதுவே அதை விலக்கிய காரணமாக இருக்கலாம்.',
+    ey4:'சட்டப் பாதுகாப்பு வாதங்கள்',st4:'நிரபராதித்துவத்தின் <em>5 தூண்கள்</em>',
+    pt1:'அமைச்சரின் நடைமுறை சரியாக பின்பற்றப்பட்டது',
+    pb1:'பரிந்துரைக்கும் அதிகாரியால் கையொப்பமிடப்பட்ட ஒருமித்த கோப்பு குறிப்பின் அடிப்படையில் டாக்டர் அன்புமணி அனுமதி வழங்கினார் — இது நிலையான அமைச்சரக நடைமுறை. அதிகாரிகளின் ஆலோசனையின் பேரில் செயல்படும் அமைச்சர், அந்த முடிவு தவறானதாகிவிட்டாலும் குற்றவியல் ரீதியில் பொறுப்பேற்க முடியாது.',
+    pt2:'இறுதி ஆய்வு கல்லூரிக்கு சாதகமாக இருந்தது',
+    pb2:'அக்டோபர் 20, 2008 மத்திய குழு — மிகவும் சமீபத்திய ஆய்வு — போதுமான வசதிகள் இருப்பதை கண்டறிந்த பிறகே இறுதி அனுமதி வழங்கப்பட்டது. ASG தானே உச்ச நீதிமன்றத்தில் இதை உறுதிப்படுத்தினார். அன்புமணி மிகவும் சமீபத்திய அதிகாரப்பூர்வ ஆய்வு அறிக்கையின் அடிப்படையிலேயே செயல்பட்டார்.',
+    pt3:'தனிப்பட்ட நிதி ஆதாயம் இல்லவே இல்லை',
+    pb3:'இரண்டு குற்றப்பத்திரிகைகளிலும் டாக்டர் அன்புமணிக்கு தனிப்பட்ட முறையில் ஒரு ரூபாய் கூட லஞ்சமாக அல்லது நிதி ஆதாயமாக சுமத்தப்படவில்லை. பண ஓட்டம் இல்லை, வங்கி பரிவர்த்தனை இல்லை, எதுவுமே இல்லை.',
+    pt4:'சந்திப்பு மட்டுமே சதியை நிரூபிக்காது',
+    pb4:'அனுமதி கையொப்பமிட்ட நாளில் கல்லூரி தலைவர் அமைச்சகத்தில் இருந்தார் என்று சிபிஐ சுட்டிக்காட்டுகிறது. ஆனால் உச்ச நீதிமன்ற முன்னுதாரணங்களை மேற்கோள் காட்டி நீதிமன்றங்கள் தெளிவுபடுத்தியுள்ளன: இரண்டு நபர்கள் சந்தித்தனர் என்பதால் மட்டுமே குற்றவியல் சதி நடந்தது என்று முடிவு செய்ய முடியாது.',
+    pt5:'சிபிஐ முக்கிய சாட்சியத்தை மறைத்தது',
+    pb5:'சிபிஐ ஆய்வு வீடியோ பதிவை கைப்பற்றியது, ஆனால் குற்றப்பத்திரிகையில் சேர்க்கவில்லை — இது வெளிப்படுத்தும் கடமையை அடிப்படையாக மீறுவதாகும். 2019ல் டெல்லி உயர் நீதிமன்றம் இது "முக்கிய சாட்சியம்" என வெளிப்படையாக தீர்ப்பளித்தது.',
+    ey5:'ஒவ்வொரு நீதிமன்றமும், ஒவ்வொரு முடிவும்',st5:'<em>நீதிமன்ற</em> பதிவு',
+    cn1:'சிபிஐ சிறப்பு நீதிமன்றம்<br>டெல்லி',cd1:'<strong>அக்டோபர் 7, 2015</strong> — குற்றம் சாட்டுமாறு உத்தரவிட்டது. பல இணை குற்றஞ்சாட்டப்பட்டவர்கள் விடுவிக்கப்பட்டனர். வீடியோ சாட்சியம் கவனிக்கப்படவே இல்லை.',co1:'அன்புமணிக்கு எதிரான தீர்ப்பு',
+    cn2:'உச்ச நீதிமன்றம்<br>(முதல் கட்டம்)',cd2:'<strong>நவம்பர் 7, 2015</strong> — குற்றங்களை ரத்து செய்ய மறுத்து உயர் நீதிமன்றத்தில் சவால் செய்யுமாறு உத்தரவிட்டது. நடைமுறை உத்தரவு மட்டுமே — குற்றம் குறித்த தீர்மானம் அல்ல.',co2:'நடைமுறை உத்தரவு மட்டுமே',
+    cn3:'டெல்லி உயர் நீதிமன்றம்<br>நீதிபதி I.S. மேத்தா',cd3:'<strong>ஜூலை 29, 2019</strong> — வரலாற்று நிவாரணம். 2015 குற்றம் சாட்டும் உத்தரவை முழுவதும் ரத்து செய்தது. வீடியோ பதிவு "முக்கிய சாட்சியம்" என்று தீர்மானித்தது.',co3:'பெரும் நிவாரணம் ✓',
+    cn4:'உச்ச நீதிமன்றம்<br>(SLP)',cd4:'<strong>ஜூலை 27, 2022</strong> — சிபிஐயின் SLP மனுவில் உயர் நீதிமன்றத்தின் 2019 உத்தரவை ரத்து செய்து டெல்லி உயர் நீதிமன்றத்திற்கு திருப்பி அனுப்பியது. உச்ச நீதிமன்றம் குற்றங்களை சாட்டவில்லை.',co4:'உயர் நீதிமன்ற உத்தரவு ரத்து',
+    cn5:'டெல்லி உயர் நீதிமன்றம்<br>நீதிபதி S.K. சர்மா',cd5:'<strong>2022 – ஜனவரி 2026 (நடைமுறையில்)</strong> — CRL.M.C. 4442/2015 &amp; 4443/2015ன் கீழ் புதிய விசாரணை. 13 ஆண்டுகளுக்கும் மேலாக, <strong>எந்த குற்றமும் இறுதியாக சாட்டப்படவில்லை.</strong>',co5:'⬤ தொடர்கிறது',
+    pq2:'"13 ஆண்டுகளாக, மூன்று நீதிமன்றங்களில், பல சுற்று மேல்முறையீடுகளில் — ஒரு குற்றமும் இறுதியாக சாட்டப்படவில்லை, ஒரு நாள் கூட விசாரணை தொடங்கவில்லை. இந்த நீண்ட நடைமுறையே தண்டனையாகிவிட்டது."<cite>— PMK சட்ட பாதுகாப்பு சுருக்கம்</cite>',
+    ey6:'பதிவுகள் காட்டுவது என்ன?',st6:'மறுக்க முடியாத <em>முக்கிய உண்மைகள்</em>',
+    ft1:'13+ ஆண்டுகள்',fx1:'2012 குற்றப்பத்திரிகையில் இருந்து 13 ஆண்டுகளுக்கும் மேல் — டாக்டர் அன்புமணிக்கு எதிராக ஒரு நாள் கூட உண்மையான விசாரணை நடைபெறவில்லை.',
+    ft2:'தனிப்பட்ட ஆதாயம் சுழியம்',fx2:'இரண்டு குற்றப்பத்திரிகைகளிலும் டாக்டர் அன்புமணிக்கு தனிப்பட்ட நிதி ஆதாயம் ஒரு ரூபாய் கூட சுமத்தப்படவில்லை.',
+    ft3:'மறைக்கப்பட்ட வீடியோ',fx3:'அக்டோபர் 2008 ஆய்வில் கல்லூரி தரத்தில் இருந்ததை காட்டும் வீடியோவை சிபிஐ கைப்பற்றியது — ஆனால் குற்றப்பத்திரிகையில் இருந்து முழுவதுமாக விலக்கியது.',
+    ft4:'இறுதி ஆய்வில் கல்லூரி தேர்ச்சி',fx4:'அக்டோபர் 20, 2008 மத்திய குழு போதுமான வசதிகள் இருப்பதை கண்டறிந்தது. ASG இதை உச்ச நீதிமன்றத்திலேயே உறுதிப்படுத்தினார்.',
+    ft5:'நிலையான அமைச்சரக நடைமுறை',fx5:'பரிந்துரைக்கும் அதிகாரியால் கையொப்பமிடப்பட்ட ஒருமித்த கோப்பு குறிப்பின் அடிப்படையில் அனுமதி வழங்கப்பட்டது — இது இந்தியாவில் இயல்பான, சட்டரீதியான அமைச்சரக நடைமுறை.',
+    ft6:'இணை குற்றஞ்சாட்டப்பட்டவர்கள் விடுவிக்கப்பட்டனர்',fx6:'சஃபர்ஜங் மருத்துவமனை மருத்துவர்கள் உள்பட பல இணை குற்றஞ்சாட்டப்பட்டவர்களை 2015ல் விசாரணை நீதிமன்றமே விடுவித்தது.',
+    ft7:'வீடியோவை "முக்கிய சாட்சியம்" என HC தீர்ப்பளித்தது',fx7:'2019ல் டெல்லி உயர் நீதிமன்றம் மறைக்கப்பட்ட வீடியோ "முக்கிய சாட்சியம்" என வெளிப்படையாக தீர்ப்பளித்தது — சிபிஐ முக்கியமான தகவலை மறைத்தது என்ற நீதித்துறை அங்கீகாரம்.',
+    ft8:'அரசியல் நேரம் பார்த்த நடவடிக்கை',fx8:'சிபிஐ சோதனைகள் 2011ல் தொடங்கின — UPA-II தொடங்கிய இரண்டாண்டுகளுக்குப் பிறகு, PMK காங்கிரஸிடம் இருந்து விலகிய நேரத்தில். அந்த நேரத்தில் UPA அரசே சிபிஐயை கட்டுப்படுத்தியது.',
+    ey7:'மறுக்க முடியாத உண்மை',st7:'இந்த வழக்கின் <em>உண்மை</em>',
+    cq1:'டாக்டர் அன்புமணி ராமதாஸ் இந்த நாட்டின் இளைய அமைச்சரவை அமைச்சராக தொண்டாற்றி, வரலாற்றுசிறப்பு வாய்ந்த பொது சுகாதார நிறுவனங்களை நிறுவி, கிராமப்புற ஏழைகளுக்காக போராடினார் — அதற்கு பதிலாக அவருக்கு கிடைத்தது, 13 ஆண்டுகளாக தொடரும் அரசியல் நோக்கத்துடன் கட்டமைக்கப்பட்ட சிபிஐ வழக்கு — ஒரு குற்றமும் நிரூபிக்கப்படவில்லை, ஒரு தண்டனையும் வழங்கப்படவில்லை, ஒரு ரூபாய் தனிப்பட்ட ஆதாயம் கூட சுமத்தப்படவில்லை.',
+    vs1:'13 ஆண்டுகால நடவடிக்கைகளுக்குப் பிறகு',vm1:'குற்றமற்றவர்',vs2:'தண்டனை இல்லை · நிரூபிக்கப்பட்ட குற்றம் இல்லை · தனிப்பட்ட ஆதாயம் இல்லை',
+    vb1:'சிபிஐ சிறப்பு நீதிமன்றம், டெல்லி உயர் நீதிமன்றம் மற்றும் உச்ச நீதிமன்றம் என மூன்று நீதிமன்றங்களிலும் — குற்றப்பத்திரிகைகள், விசாரணைகள், SLP என அனைத்திலும் — டாக்டர் அன்புமணி ராமதாஸ் எந்த குற்றத்திலும் தண்டிக்கப்படவில்லை. அவரின் அரசியல் வாழ்க்கையை அழிக்க நினைத்த இந்த வழக்கு, அரசியல் எதிரிகளுக்கு எதிராக மத்திய நிறுவனங்கள் ஆயுதமாக பயன்படுத்தப்படுவதை வெளிச்சம் போட்டு காட்டியது.',
+    al5:'நிரூபிக்கப்பட்டது என்ன?',at5:'அன்புமணிக்கு எதிராக எதுவுமே இல்லை',ab5:'லஞ்சம் இல்லை. பண ஓட்டம் இல்லை. நிரூபிக்கப்பட்ட சதி இல்லை. முடிந்த விசாரணை இல்லை. பதிவான தண்டனை இல்லை. 13 ஆண்டுகளுக்குப் பிறகும் வழக்கு குற்றம் சாட்டும் கட்டத்திலேயே உள்ளது.',
+    al6:'இந்த வழக்கு வெளிப்படுத்தியது',at6:'சிபிஐயை அரசியல் ஆயுதமாக பயன்படுத்துதல்',ab6:'PMK, UPA அரசிடம் இருந்து விலகியபோது தொடங்கிய வழக்கு. சாதகமான வீடியோ சாட்சியத்தை விலக்கிய குற்றப்பத்திரிகை. 13 ஆண்டுகளாக விசாரணையே தொடங்காமல் இழுத்தடிக்கப்பட்ட வழக்கு. இந்த வடிவம் தெளிவாக புலப்படுகிறது.',
+    foot:'பிஎம்கே — பட்டாளி மக்கள் கட்சி &nbsp;|&nbsp; சட்ட பாதுகாப்பு ஆவணம் &nbsp;|&nbsp; டாக்டர் அன்புமணி ராமதாஸ் &nbsp;|&nbsp; அனைத்து தகவல்களும் நீதிமன்ற பதிவுகளில் இருந்து'
+  }
+};
+
+function L(lang) {
+  var d = T[lang];
+  // Update every element by ID
+  for (var id in d) {
+    var el = document.getElementById(id);
+    if (el) el.innerHTML = d[id];
+  }
+  // Body class for font
+  document.body.className = lang;
+  // Buttons
+  document.getElementById('ben').className = 'lb' + (lang==='en'?' on':'');
+  document.getElementById('bta').className = 'lb' + (lang==='ta'?' on':'');
+  try { localStorage.setItem('pmk-lang', lang); } catch(e) {}
+}
+
+// Init
+window.addEventListener('DOMContentLoaded', function() {
+  var s = 'en';
+  try { s = localStorage.getItem('pmk-lang') || 'en'; } catch(e) {}
+  L(s);
+});
+
+// SCROLL ANIMATIONS
+var ob = new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('v');});},{threshold:0.1});
+document.querySelectorAll('.fi,.tli').forEach(function(el){ob.observe(el);});
+document.querySelectorAll('.tli').forEach(function(el,i){el.style.transitionDelay=(i*.07)+'s';});
+
+// NAV
+var sc2=document.querySelectorAll('section[id]'),nb2=document.querySelectorAll('.nb');
+new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){nb2.forEach(function(b){b.classList.remove('on');});var a=document.querySelector('.nb[onclick="go(\'#'+x.target.id+'\')"]');if(a)a.classList.add('on');}});},{threshold:0.3}).observe||(function(){sc2.forEach(function(s){new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){nb2.forEach(function(b){b.classList.remove('on');});var a=document.querySelector('.nb[onclick="go(\'#'+x.target.id+'\')"]');if(a)a.classList.add('on');}});},{threshold:0.3}).observe(s);});})();
+sc2.forEach(function(s){new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){nb2.forEach(function(b){b.classList.remove('on');});var a=document.querySelector('.nb[onclick="go(\'#'+x.target.id+'\')"]');if(a)a.classList.add('on');}});},{threshold:0.3}).observe(s);});
+
+function go(id){var el=document.querySelector(id);if(el)el.scrollIntoView({behavior:'smooth'});}
+</script>
+</body>
+</html>
